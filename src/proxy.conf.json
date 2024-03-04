@@ -1,9 +1,9 @@
 {
   "/api/": {
-    "target": "https://api.busbox.guru",
+    "target": "",
     "secure": true,
     "pathRewrite": {
-      "^/api": "https://api.busbox.guru/v1/"
+      "^/api": ""
     },
     "changeOrigin": true,
     "logLevel": "debug"
