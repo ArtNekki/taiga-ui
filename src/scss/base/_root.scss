@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+:root {
+  --base-space: 4px;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-primary: #2c4798;
+  --color-secondary: #0d0c1a;
+  --color-gray-100: #e6e6e6;
+  --color-gray-200: #a8a8a8;
+  --color-blue-100: #d6ddf1;
+  --color-blue-200: #aabbea;
+}
+
+//color-icon
+:root {
+  --color-icon-accent: #ffc006;
+  --color-icon-red: #f52a48;
+  --color-icon-green: #2e9c3a;
+  --color-icon-black: #000000;
+}
+
+//effects
+:root {
+  --box-shadow-xs: -3px 4px 17px 0px #0000001a;
+  --box-shadow-sm: -2px 25px 33px 1px rgba(0, 0, 0, 0.08),
+    0 1px 7px 0 rgba(0, 0, 0, 0.09);
+  --box-shadow-md: -2px 25px 33px 1px rgba(0, 0, 0, 0.12);
+}
+
+// transitions
+:root {
+  --transition-time: 0.3s;
+}
+
+//container max widths
+//:root {
+//  --container-width-sm: 600px;
+//  --container-width-md: 768px;
+//  --container-width-lg: 1280px;
+//}
+
+// z-index
+:root {
+  --layer-1: 1;
+  --layer-2: 2;
+  --layer-3: 3;
+  --layer-4: 4;
+}
+
+//font
+:root {
+  --font-family: Gilroy, 'Open Sans', 'Helvetica Neue';
+  --font-family-secondary: 'Bebas Neue', 'Open Sans', FranklinGothic,
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+//other
+:root {
+  --skew-angle: 5deg;
+}
+
+// :root {
+//   --section-spacing: 3.5rem;
+//   @include mq(medium) {
+//     --section-spacing: 7rem;
+//   }
+//   @each $color, $shade in $colors {
+
+//     @each $prop, $value in $shade {
+//       --clr-#{$color}-#{$prop}: #{$value};
+//     }
+//   }
+
+//   @each $screen-size, $property in $type-scale {
+//     @if $screen-size == small {
+//       @each $prop, $value in $property {
+//         --fs-#{$prop}: #{$value};
+//       }
+//     } @else {
+//       @include mq(small) {
+//         @each $prop,
+//         $value in $property {
+//           --fs-#{$prop}: #{$value};
+//         }
+//       }
+//     }
+//   }
+// }

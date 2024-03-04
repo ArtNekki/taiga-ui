@@ -1,0 +1,71 @@
+@use 'breakpoints' as *;
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin pseudo(
+  $loc: before,
+  $content: '',
+  $pos: absolute,
+  $top: 0,
+  $bottom: 0,
+  $left: 0,
+  $right: 0
+) {
+  position: relative;
+
+  &::#{$loc} {
+    content: $content;
+    position: $pos;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    @content;
+  }
+}
+
+@mixin hover-lift() {
+  transition: transform 350ms ease-in-out;
+  box-shadow: 0 0.25em 0.5em 0 rgba(black, 0.2);
+
+  @include pseudo($loc: before) {
+    box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
+    transition: transform 350ms ease-in-out;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin bg-image($path, $ext) {
+  background-image: url($path + '.' + $ext);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url($path + '@2x.' + $ext);
+  }
+
+  //@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  //  background-image: url($name + "@3x." + $ext);
+  //}
+}
+
+@mixin container {
+  padding: 0 1.5rem;
+  max-width: 80rem;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}

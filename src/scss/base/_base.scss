@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}

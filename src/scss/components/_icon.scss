@@ -1,0 +1,13 @@
+.icon {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+
+  &--white {
+    color: var(--color-white);
+  }
+
+  &--black {
+    color: var(--color-black);
+  }
+}
